@@ -1,38 +1,26 @@
-pipeline {
-    agent {
+pipeline{
+    agent{
         label "worker"
     }
-
-    tools {
-        maven 'mvn'
-    }
-
-    stages {
-
-        stage('checkout') {
-            steps {
-                git 'https://github.com/mayurpandit25/student-management.git'
-                echo "Clonning is successful"
+    stages{
+        stage('checkout'){
+            steps{
+             echo "Code Clone Successfull"
             }
         }
-
-        stage('Build') {
-            steps {
-                sh '''
-                  mvn clean package
-                '''
+        stage('Build'){
+            steps{
+             echo "build successfull"
             }
         }
-
-        stage('Test') {
-            steps {
-                echo "Testing is successful"
+        stage('Test'){
+            steps{
+             echo "Test Successfull"
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo "Deployment is successful"
+        stage('Deploy'){
+            steps{
+              echo "Deployment successfull"
             }
         }
     }
