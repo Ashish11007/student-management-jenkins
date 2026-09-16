@@ -5,6 +5,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
+            git 'https://github.com/Ashish11007/student-management-jenkins.git'
              echo "Code Clone Successfull"
             }
         }
