@@ -28,6 +28,11 @@ pipeline{
                 }
             }
         }
+        stage('Artifacts to s3'){
+            steps{
+                sh 'aws s3 cp target/*.war s3://ashish050904/Artifacts/student.war'
+            }
+        }
         stage('Test'){
             steps{
              echo "Test Successfull"
