@@ -20,7 +20,12 @@ pipeline{
                 sh '''
                 mvn clean package
                 '''
-             echo "build successfull"
+             
+            }
+            post{
+                success{
+                    archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+                }
             }
         }
         stage('Test'){
